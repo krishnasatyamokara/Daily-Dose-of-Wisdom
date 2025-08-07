@@ -1,0 +1,194 @@
+:root {
+    --primary-color: #4a6fa5;
+    --secondary-color: #166088;
+    --accent-color: #4fc3dc;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --success-color: #28a745;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url(quote.jpg);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin:  8% 25%;
+    position: relative;
+
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    color: white;
+    font-size: 2.5rem;
+}
+
+.quote-container {
+    background-color: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 0px solid;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transition: all 0.3s ease;
+}
+
+.quote-text {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.quote-author {
+    font-size: 1.2rem;
+    text-align: right;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+#save-quote {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#save-icon {
+    font-size: 1.2rem;
+}
+
+.favorites-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.favorites-sidebar.show {
+    right: 0;
+}
+
+.favorites-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.favorites-header h2 {
+    color: var(--secondary-color);
+}
+
+#close-favorites {
+    background: none;
+    color: var(--dark-color);
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+}
+
+#close-favorites:hover {
+    background-color: #eee;
+    transform: none;
+}
+
+.favorites-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.favorite-item {
+    background-color: var(--light-color);
+    padding: 2rem;
+    border-radius: 5px;
+    position: relative;
+}
+
+.favorite-quote {
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.favorite-author {
+    text-align: right;
+    font-weight: bold;
+}
+
+.remove-favorite {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: none;
+    color: #dc3545;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.9rem;
+}
+
+.remove-favorite:hover {
+    background-color: #f8d7da;
+}
+
+.saved {
+    color: var(--success-color);
+}
+
+@media (max-width: 600px) {
+    .favorites-sidebar {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .buttons {
+        flex-direction: column;
+    }
+    
+    button {
+        width: 100%;
+    }
+}
